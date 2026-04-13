@@ -6,12 +6,57 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<style>
+			/* Change the outer background to a deep professional navy */
+			body, body.is-preload { background-color: #0d1b2a !important; background-image: none !important; }
+			#wrapper { background-color: transparent !important; }
+			
+			/* Style the Intro block */
+			#intro { background-color: #1b263b !important; }
+			#intro h1 { color: #ffffff !important; }
+			#intro p { color: #e0e1dd !important; }
+			
+			/* Style the Navigation */
+			#header { background-color: #0d1b2a !important; }
+			#nav { background-color: #1b263b !important; border-bottom-color: #415a77 !important; }
+			#nav li.active a { background-color: #415a77 !important; color: #ffffff !important; }
+			#nav li a:hover { color: #778da9 !important; }
+			
+			/* Keep main content area clean and readable */
+			#main { background-color: #ffffff !important; }
+			h1, h2, h3, h4, h5, h6 { color: #1b263b !important; }
+			
+			/* Custom Button Colors */
+			.button { box-shadow: inset 0 0 0 2px #415a77 !important; color: #415a77 !important; }
+			.button:hover { background-color: #f0f4f8 !important; color: #1b263b !important; box-shadow: inset 0 0 0 2px #1b263b !important; }
+			.button.primary, .button.large { background-color: #415a77 !important; color: #ffffff !important; box-shadow: none !important; }
+			.button.primary:hover, .button.large:hover { background-color: #1b263b !important; }
+			
+			/* Footer styling */
+			#footer { background-color: #f4f7fb !important; border-top: 2px solid #e0e1dd !important; }
+			#footer h3 { color: #415a77 !important; }
+			#copyright { color: #778da9 !important; }
+			
+			/* Profile Picture CSS */
+			.profile-pic {
+				width: 160px;
+				height: 160px;
+				border-radius: 50%;
+				object-fit: cover;
+				border: 4px solid #415a77;
+				margin-bottom: 25px;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<div id="wrapper" class="fade-in">
 
 				<div id="intro">
+						<img src="images/profile.jpg" alt="Justin Allen" class="profile-pic" onerror="this.style.display='none'" />
+						
 						<h1>Justin Allen</h1>
 						<p>Computer Science @ Georgia Tech. Embedded Systems & Software Engineer.<br />
 						Incoming Software Engineering Intern @ GTRI.</p>
@@ -39,14 +84,15 @@
 						<article class="post featured">
 								<header class="major">
 									<span class="date">Current (CREATE-X I2P)</span>
-									<h2><a href="#">Project CORE:<br />
-									Embedded Audio Compute</a></h2>
+									<h2>Project CORE:<br />
+									Embedded Audio Compute</h2>
 									<p>Developing a modular, solderless digital signal processing (DSP) system for electric guitars. Utilizing an ARM Cortex-M7 microcontroller to process high-fidelity audio with sub-10ms latency. The hardware is paired with a mobile-responsive, offline-first control dashboard using the Web Bluetooth API to allow real-time signal routing directly from a browser. Currently executing blind user-testing and holding a provisional patent for the hardware interface.</p>
                                     <p><b>Tech Stack: C++, DSP, Web Bluetooth API, Fusion 360, EasyEDA</b></p>
 								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="Project CORE" /></a>
+								<a href="https://github.com/justindallen2025" target="_blank" class="image main"><img src="images/pic01.jpg" alt="Project CORE Prototype" /></a>
 								<ul class="actions special">
 									<li><a href="https://github.com/justindallen2025" target="_blank" class="button large">View GitHub</a></li>
+									<li><a href="https://www.coremusictech.com/" target="_blank" class="button primary large">View Web Dashboard</a></li>
 								</ul>
 							</article>
 
@@ -54,10 +100,10 @@
 								<article>
 									<header>
 										<span class="date">April 2026</span>
-										<h2><a href="#">Catalyst:<br />
-										Cloud Burn Tracker</a></h2>
+										<h2>Catalyst:<br />
+										Cloud Burn Tracker</h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="Catalyst Dashboard" /></a>
+									<a href="https://devpost.com/software/catalyst-6x758e" target="_blank" class="image fit"><img src="images/pic02.jpg" alt="Catalyst Dashboard" /></a>
 									<p>A proactive cloud-credit monitoring dashboard designed for early-stage founders. Built during the SproutGT Hackathon, the platform utilizes a Model Context Protocol (MCP) backend powered by Gemini 1.5 Pro to forecast burn rates, and integrates the ElevenLabs API to dispatch real-time, multilingual voice alerts.</p>
                                     <p><b>Tech Stack: Next.js, Python, Gemini API, ElevenLabs, MongoDB</b></p>
 									<ul class="actions special">
@@ -68,43 +114,35 @@
 								<article>
 									<header>
 										<span class="date">In Development</span>
-										<h2><a href="#">Low-Code<br />
-										App Ecosystem</a></h2>
+										<h2>App Genius:<br />
+										Low-Code Ecosystem</h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="Low Code Ecosystem" /></a>
+									<a href="https://github.com/justindallen2025" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="App Genius Code" /></a>
 									<p>Currently architecting a web-based ecosystem designed to empower non-technical creators to build, test, and deploy applications without writing code. Focusing on a Progressive Web App (PWA) architecture to bypass traditional app store bottlenecks.</p>
                                     <p><b>Tech Stack: Next.js, Cloud Architecture</b></p>
 									<ul class="actions special">
-										<li><a href="https://github.com/justindallen2025" target="_blank" class="button">View GitHub</a></li>
+										<li><a href="https://github.com/justindallen2025" target="_blank" class="button">View GitHub Repo</a></li>
 									</ul>
 								</article>
 
 								<article>
 									<header>
 										<span class="date">Jan 2023 - Present</span>
-										<h2><a href="#">Linux Distributed<br />
-										Server Ops</a></h2>
+										<h2>Linux Distributed<br />
+										Server Ops</h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="Linux Server" /></a>
 									<p>Deployed and managed a high-performance Linux-based server environment. Configured TCP/UDP port forwarding, managed headless Linux instances, wrote bash scripts for automated backups, and optimized protocol bottlenecks to maintain stability under high-concurrency loads.</p>
                                     <p><b>Tech Stack: Linux/Unix, Bash Scripting, TCP/UDP Networking</b></p>
-									<ul class="actions special">
-										<li><a href="#" class="button">View Details</a></li>
-									</ul>
 								</article>
 
 								<article>
 									<header>
 										<span class="date">Aug 2023 - May 2024</span>
-										<h2><a href="#">Autonomous<br />
-										Go-Kart</a></h2>
+										<h2>Autonomous<br />
+										Go-Kart</h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="Go-Kart" /></a>
 									<p>Engineered the electrical and mechanical systems for a gas-powered vehicle. Programmed Arduino microcontrollers to manage engine kill-switches and monitor RPM/speed data via Hall Effect sensors. Conducted root-cause analysis on structural components after stress failures.</p>
                                     <p><b>Tech Stack: Arduino, C, Control Systems</b></p>
-									<ul class="actions special">
-										<li><a href="#" class="button">View Details</a></li>
-									</ul>
 								</article>
 							</section>
 
