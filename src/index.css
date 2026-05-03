@@ -1,19 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
 
-@layer components {
-  /* The core glassmorphism effect used on cards and buttons */
-  .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
-  }
-  
-  /* The subtle neon glow for text */
-  .text-glow {
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-neon-cyan: #00f3ff;
+  --color-electric-purple: #9d00ff;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-gray-200 antialiased;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-300 hover:border-neon-cyan/50 hover:shadow-[0_0_20px_rgba(0,243,255,0.15)];
+  }
+
+  .text-glow {
+    @apply drop-shadow-[0_0_8px_rgba(0,243,255,0.8)];
+  }
+}
+
+/* Futuristic Grid Background */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
 }

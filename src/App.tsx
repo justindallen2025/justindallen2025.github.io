@@ -8,7 +8,6 @@ import { motion } from 'motion/react';
 import { 
   Github, 
   Linkedin, 
-  Mail, 
   ExternalLink, 
   Terminal, 
   Cpu, 
@@ -16,7 +15,9 @@ import {
   Code, 
   Server,
   MapPin,
-  Globe
+  Globe,
+  Gamepad2,
+  LineChart
 } from 'lucide-react';
 
 const Typewriter = ({ text, delay = 100 }: { text: string; delay?: number }) => {
@@ -166,9 +167,10 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="font-mono font-bold text-xl tracking-tighter text-white"
+            className="font-mono font-bold text-xl tracking-tighter text-white flex items-center gap-2"
           >
-            JUSTIN<span className="text-neon-cyan">.ALLEN</span>
+            <Terminal size={20} className="text-neon-cyan" />
+            <span>JUSTIN ALLEN</span>
           </motion.div>
           <div className="flex gap-8 text-sm font-mono uppercase tracking-widest text-gray-400">
             <a href="#about" className="hover:text-neon-cyan transition-colors">About</a>
@@ -194,7 +196,7 @@ export default function App() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-cyan"></span>
                   </span>
-                  AVAILABLE FOR INTERNSHIPS
+                  SUMMER 2026 GTRI SWE INTERN
                 </span>
               </div>
               
@@ -207,7 +209,7 @@ export default function App() {
               </div>
               
               <p className="text-lg text-gray-500 max-w-xl mb-10 leading-relaxed">
-                Incoming Software Engineering Intern @ <span className="text-white font-medium italic underline decoration-neon-cyan/50 underline-offset-4">GTRI</span>. 
+                Computer Science student specializing in Information Internetworks and Cybersecurity. 
                 Bridging the gap between high-level software and bare-metal performance.
               </p>
               
@@ -244,11 +246,10 @@ export default function App() {
             >
               <div className="absolute inset-0 bg-neon-cyan/20 blur-2xl rounded-full"></div>
               <img 
-                src="images/profile.jpg" 
+                src="/images/profile.jpg" 
                 alt="Justin Allen" 
-                className="relative w-full h-full object-cover rounded-full border-2 border-neon-cyan/50 shadow-[0_0_30px_rgba(0,243,255,0.2)] z-10"
+                className="relative w-full h-full object-cover object-[center_20%] rounded-full border-2 border-neon-cyan/50 shadow-[0_0_30px_rgba(0,243,255,0.2)] z-10"
                 onError={(e) => {
-                  // Fallback if image path is broken during testing
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
@@ -267,21 +268,21 @@ export default function App() {
               className="space-y-6 text-lg text-gray-400 leading-relaxed"
             >
               <p>
-                I am a <span className="text-white font-medium">Computer Science student at Georgia Tech</span> with a focus on Information Internetworks and Cybersecurity. 
+                I am a <span className="text-white font-medium">Computer Science student at Georgia Tech</span> with a focus on Information Internetworks and Cybersecurity & Privacy. 
               </p>
               <p>
                 I am passionate about the intersection of software and the physical world—whether that means building low-latency embedded audio processors, 
-                managing headless Linux servers, or developing proactive AI web applications.
+                managing headless Linux servers, or developing complex software simulations.
               </p>
               <div className="pt-4 flex gap-4">
                 <div className="flex flex-col">
-                  <span className="text-white font-mono font-bold text-2xl uppercase">GT 2025</span>
+                  <span className="text-white font-mono font-bold text-2xl uppercase">DEC 2028</span>
                   <span className="text-xs text-gray-500 uppercase tracking-widest font-mono">Graduation</span>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
                 <div className="flex flex-col">
                   <span className="text-white font-mono font-bold text-2xl uppercase text-neon-cyan" style={{ textShadow: '0 0 10px rgba(0,243,255,0.5)' }}>GTRI</span>
-                  <span className="text-xs text-gray-500 uppercase tracking-widest font-mono">Future</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-widest font-mono">Summer '26</span>
                 </div>
               </div>
             </motion.div>
@@ -293,10 +294,10 @@ export default function App() {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { label: 'Intelligence', value: 'Gemini/MCP' },
-                { label: 'Low Level', value: 'C++/Embedded' },
-                { label: 'Ops', value: 'Linux/Bash' },
-                { label: 'Web', value: 'Next.js/React' }
+                { label: 'Languages', value: 'Python, C++, Java' },
+                { label: 'Embedded', value: 'ARM Cortex, Arduino' },
+                { label: 'Ops', value: 'Linux, TCP/UDP, Bash' },
+                { label: 'Concepts', value: 'DSP, OOP, Networking' }
               ].map((item) => (
                 <div key={item.label} className="glass p-6 rounded-2xl border border-white/5 hover:border-neon-cyan/30 transition-colors">
                   <div className="text-xs font-mono text-neon-cyan uppercase mb-2">{item.label}</div>
@@ -312,52 +313,67 @@ export default function App() {
           <SectionHeading icon={Cpu}>Core Engineering Projects</SectionHeading>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard 
-              title="Project CORE: Embedded Audio Computer"
-              period="Current (CREATE-X I2P)"
-              description="Developing a modular, solderless DSP system for electric guitars. Sub-10ms latency processing on ARM Cortex-M7 with Web Bluetooth API integration."
-              tech={['C++', 'DSP', 'Web Bluetooth API', 'Fusion 360', 'EasyEDA']}
+              title="Project CORE: Embedded Audio"
+              period="Aug 2024 - Present"
+              description="Developing a modular, embedded signal processing system for electric guitars. Utilizing an ARM Cortex-M7 to process 24-bit/96kHz audio with sub-10ms latency. Designed custom 4-layer PCBs in EasyEDA."
+              tech={['C++', 'ARM Cortex-M7', 'DSP', 'Fusion 360', 'EasyEDA']}
               icon={Cpu}
-              imgSrc="pic01.jpg"
+              imgSrc="/images/pic01.jpg"
               links={[
                 { label: 'View GitHub', url: 'https://github.com/justindallen2025' },
-                { label: 'View Web Dashboard', url: 'https://www.coremusictech.com/', primary: true }
+                { label: 'View Website', url: 'https://coremusictech.com', primary: true }
               ]}
             />
             <ProjectCard 
               title="Catalyst: Cloud Burn Tracker"
-              period="April 2026"
-              description="Proactive cloud-credit monitoring dashboard for early-stage founders. Built during SproutGT Hackathon using Gemini and ElevenLabs."
-              tech={['Next.js', 'Python', 'Gemini API', 'ElevenLabs', 'MongoDB']}
+              period="Apr 2026 (SproutGT)"
+              description="Proactive cloud-credit and SaaS burn tracker for founders. Ingests data via Plaid & Gmail, uses a Gemini MCP backend to forecast runway, and dispatches real-time multilingual voice alerts via ElevenLabs."
+              tech={['Next.js', 'Gemini API', 'ElevenLabs', 'Plaid', 'MongoDB']}
               icon={Cloud}
-              imgSrc="pic02.jpg"
+              imgSrc="/images/pic02.jpg"
               links={[
-                { label: 'View Devpost', url: 'https://devpost.com/software/catalyst-6x758e', primary: true }
+                { label: 'View Live App', url: 'https://catalyst-689371061372.us-west1.run.app', primary: true },
+                { label: 'View LinkedIn', url: 'https://lnkd.in/epVejapH' }
               ]}
             />
             <ProjectCard 
-              title="App Genius: Low-Code Ecosystem"
+              title="App for Apps: PWA Generator"
               period="In Development"
-              description="Web-based ecosystem empowering non-technical creators to build and deploy PWAs without writing code. Focus on cloud architecture."
-              tech={['Next.js', 'Cloud Architecture']}
+              description="A Low-Code Progressive Web App (PWA) platform empowering non-technical creators to build and deploy functional applications directly to the mobile web, bypassing App Store bottlenecks and fees."
+              tech={['Next.js', 'PWA', 'Cloud Architecture']}
               icon={Code}
-              imgSrc="pic03.jpg"
+              imgSrc="/images/pic03.jpg"
               links={[
-                { label: 'View GitHub Repo', url: 'https://github.com/justindallen2025' }
+                { label: 'View GitHub', url: 'https://github.com/justindallen2025' }
               ]}
             />
             <ProjectCard 
               title="Linux Distributed Server Ops"
               period="Jan 2023 - Present"
-              description="Deployed high-performance Linux environments, headless instances, and custom bash scripts for automated backups and TCP/UDP port networking."
+              description="Deployed and managed a high-performance Linux-based game server environment. Configured TCP/UDP port forwarding, managed headless instances, and optimized protocol bottlenecks for high-concurrency loads."
               tech={['Linux/Unix', 'Bash Scripting', 'TCP/UDP Networking']}
               icon={Server}
             />
             <ProjectCard 
-              title="Autonomous Go-Kart"
+              title="Autonomous Go-Kart Telemetry"
               period="Aug 2023 - May 2024"
-              description="Engineered electrical/mechanical systems for a gas-powered vehicle. Programmed Arduino kill-switches and monitored RPM via Hall Effect sensors."
+              description="Engineered electrical and mechanical systems for a gas-powered vehicle. Programmed Arduino microcontrollers to manage engine kill-switches and monitor RPM/speed data via Hall Effect sensors."
               tech={['Arduino', 'C', 'Control Systems']}
               icon={Globe}
+            />
+            <ProjectCard 
+              title="Python OOP Simulation"
+              period="Apr 2024"
+              description="Developed a fully functional 2D arcade-style game with thousands of lines of code. Implemented collision detection, sprite management, and a continuously scrolling background using modular OOP architecture."
+              tech={['Python', 'Pygame', 'OOP', 'Game Design']}
+              icon={Gamepad2}
+            />
+            <ProjectCard 
+              title="Monte Carlo Investment Sim"
+              period="Jan 2024"
+              description="Built a Python simulation to model long-term market volatility. Implemented randomization algorithms to generate 10,000+ iteration scenarios, calculating confidence intervals for 30-year horizons."
+              tech={['Python', 'Data Simulation', 'Algorithms']}
+              icon={LineChart}
             />
           </div>
         </section>
@@ -378,8 +394,7 @@ export default function App() {
           <div className="flex gap-4">
             {[
               { icon: Github, href: 'https://github.com/justindallen2025' },
-              { icon: Linkedin, href: 'https://www.linkedin.com/in/justindallen2025/' },
-              { icon: Mail, href: 'mailto:justindallen2025@gmail.com' }
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/justindallen2025/' }
             ].map((social, i) => (
               <a 
                 key={i} 
