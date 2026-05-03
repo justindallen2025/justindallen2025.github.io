@@ -308,7 +308,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Projects Section  */}
         <section id="projects" className="mb-48 scroll-mt-32">
           <SectionHeading icon={Cpu}>Core Engineering Projects</SectionHeading>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
