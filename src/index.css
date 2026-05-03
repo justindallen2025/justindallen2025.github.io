@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* The core glassmorphism effect used on cards and buttons */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  /* The subtle neon glow for text */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
