@@ -71,11 +71,14 @@ export default function App() {
 
   const renderHome = () => (
     <div className="animate-in fade-in duration-1000">
-      {/* FULL BLEED HERO PLACEHOLDER */}
-      <div className="w-full h-[70vh] bg-zinc-900 flex flex-col justify-end p-12 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-zinc-800 text-sm tracking-widest uppercase">
-          Hero Image Placeholder
-        </div>
+      <div className="w-full h-[70vh] bg-black flex flex-col justify-end p-12 relative overflow-hidden">
+        <img 
+          src="/images/IMG_0851.jpeg" 
+          alt="Embedded Hardware" 
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6">
             Justin Allen
@@ -96,16 +99,20 @@ export default function App() {
             </p>
           </div>
           <div className="md:col-span-2">
-            {/* WIDE IMAGE PLACEHOLDER */}
-            <div className="w-full aspect-[21/9] bg-zinc-900 flex items-center justify-center text-zinc-800 text-sm tracking-widest uppercase">
-              Contextual Image Placeholder
+            {/* WIDE CONTEXTUAL IMAGE */}
+            <div className="w-full aspect-[21/9] bg-zinc-900 overflow-hidden">
+              <img 
+                src="/images/IMG_1349.jpeg" 
+                alt="Tactical Network Infrastructure" 
+                className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-
+  
   const renderProjects = () => (
     <div className="max-w-7xl mx-auto px-8 py-24 animate-in fade-in duration-1000">
       <header className="mb-24">
