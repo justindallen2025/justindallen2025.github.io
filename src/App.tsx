@@ -151,7 +151,7 @@ export default function App() {
       {/* SECTION 4: PERFORMANCE (MTB DROP) */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
         <img 
-          src="/images/IMG_1716_2.jpeg" 
+          src="/images/IMG_1716.jpeg" 
           alt="Mountain Biking Drop" 
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
