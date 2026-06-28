@@ -5,13 +5,13 @@ const EXPERIENCE = [
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
     period: "May 2026 to Present",
-    desc: "Architecting tactical network environments. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks."
+    desc: "Architecting tactical network environments[cite: 4]. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks[cite: 4]."
   },
   {
     role: "IT Intern",
     company: "Fellowship Christian School",
     period: "Jan 2024",
-    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure."
+    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure[cite: 6]."
   }
 ];
 
@@ -19,25 +19,25 @@ const PROJECTS = [
   {
     title: "Project CORE",
     subtitle: "Digital Signal Processing Architecture",
-    description: "Modular embedded audio digital signal processing system. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller.",
+    description: "Modular embedded audio digital signal processing system[cite: 4, 6]. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller[cite: 4, 6].",
     img: "/images/image_1_2.png" 
   },
   {
     title: "Catalyst Cloud Burn Tracker",
     subtitle: "Financial Alerting Pipeline",
-    description: "Proactive cloud credit and software burn tracker for founders. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting.",
+    description: "Proactive cloud credit and software burn tracker for founders[cite: 4]. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting[cite: 4].",
     img: "/images/dashboard.png"
   },
   {
     title: "Distributed Server Operations",
     subtitle: "High Concurrency Infrastructure",
-    description: "Deployed and managed a high performance Linux based server environment. Configured TCP and UDP port forwarding and optimized protocol bottlenecks.",
+    description: "Deployed and managed a high performance Linux based server environment[cite: 4, 6]. Configured TCP and UDP port forwarding and optimized protocol bottlenecks[cite: 4, 6].",
     img: "/images/complex_bread_2.jpeg" 
   },
   {
     title: "Autonomous Telemetry",
     subtitle: "Control Systems",
-    description: "Engineered electrical and mechanical systems for a gas powered vehicle. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors.",
+    description: "Engineered electrical and mechanical systems for a gas powered vehicle[cite: 4, 6]. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors[cite: 4, 6].",
     img: "/images/IMG_0851.jpeg"
   }
 ];
@@ -51,7 +51,7 @@ const HOBBIES = [
   {
     title: "Mechanical Performance",
     description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization.",
-    img: "/images/IMG_1716_2.jpeg"
+    img: "/images/IMG_1716.jpeg"
   },
   {
     title: "Community Impact",
@@ -89,12 +89,13 @@ export default function App() {
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
+        {/* Removed mx-auto to restore the left-aligned striking look */}
+        <div className="relative z-10 max-w-4xl pb-12">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">
             Justin Allen
           </h1>
           <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">
-            Computer Science Georgia Tech. Software Engineer Intern at GTRI. 
+            Computer Science Georgia Tech and Software Engineer Intern at GTRI. 
             Bridging high level software with bare metal performance.
           </p>
         </div>
@@ -113,7 +114,7 @@ export default function App() {
             Tactical Operations
           </h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Currently reverse engineering firmware and modeling tactical network environments to solve complex reliability problems for defense partners.
+            Currently a Software Engineering Intern in ANGPD for the GTTAK project[cite: 2]. Architecting deployable server environments and routing live video feeds for cross agency situational awareness platforms[cite: 4].
           </p>
           <button 
             onClick={() => setCurrentPage('about')}
@@ -124,12 +125,12 @@ export default function App() {
         </div>
       </div>
 
-      {/* SECTION 3: FEATURED PROJECT (DASHBOARD) */}
+      {/* SECTION 3: FEATURED PROJECT (CAD GUITAR) */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
         <img 
-          src="/images/dashboard.png" 
-          alt="Software Dashboard Interface" 
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-30"
+          src="/images/image_1_2.png" 
+          alt="Hardware Design" 
+          className="absolute inset-0 w-full h-full object-contain opacity-50 p-12"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
@@ -137,7 +138,7 @@ export default function App() {
             Systems Architecture
           </h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Developing offline first vanilla JavaScript control systems utilizing the Web Bluetooth API for real time hardware telemetry and signal routing.
+            Developing modular computing platforms and custom routed circuit boards[cite: 4, 6]. Utilizing microcontrollers and low latency algorithms to build high fidelity systems and complex hardware integrations[cite: 4, 6].
           </p>
           <button 
             onClick={() => setCurrentPage('projects')}
@@ -153,21 +154,21 @@ export default function App() {
         <img 
           src="/images/IMG_1716.jpeg" 
           alt="Mountain Biking Drop" 
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">
-            Mechanical Precision
+            Personal Pursuits
           </h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Applying engineering principles to physical endurance. Focused on optimizing mechanical systems for high impact environments.
+            Passionate about mountain biking and automotive mechanics. Dedicated to community service through Operation Christmas Child and producing original music including three albums and a featured music video.
           </p>
           <button 
             onClick={() => setCurrentPage('about')}
             className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm"
           >
-            View Personal Pursuits
+            View Lifestyle
           </button>
         </div>
       </div>
