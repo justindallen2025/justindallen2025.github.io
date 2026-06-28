@@ -5,13 +5,13 @@ const EXPERIENCE = [
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
     period: "May 2026 to Present",
-    desc: "Architecting tactical network environments[cite: 4]. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks[cite: 4]."
+    desc: "Architecting tactical network environments. Engineering Python and Node-RED middleware for real-time sensor ingestion across federal and state networks."
   },
   {
     role: "IT Intern",
     company: "Fellowship Christian School",
     period: "Jan 2024",
-    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure[cite: 6]."
+    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure."
   }
 ];
 
@@ -19,44 +19,37 @@ const PROJECTS = [
   {
     title: "Project CORE",
     subtitle: "Digital Signal Processing Architecture",
-    description: "Modular embedded audio digital signal processing system[cite: 4, 6]. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller[cite: 4, 6].",
-    img: "/images/image_1_2.png" 
+    description: "Modular embedded audio digital signal processing system. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller."
   },
   {
     title: "Catalyst Cloud Burn Tracker",
     subtitle: "Financial Alerting Pipeline",
-    description: "Proactive cloud credit and software burn tracker for founders[cite: 4]. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting[cite: 4].",
-    img: "/images/dashboard.png"
+    description: "Proactive cloud credit and software burn tracker for founders. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting."
   },
   {
     title: "Distributed Server Operations",
     subtitle: "High Concurrency Infrastructure",
-    description: "Deployed and managed a high performance Linux based server environment[cite: 4, 6]. Configured TCP and UDP port forwarding and optimized protocol bottlenecks[cite: 4, 6].",
-    img: "/images/complex_bread_2.jpeg" 
+    description: "Deployed and managed a high performance Linux based server environment. Configured TCP and UDP port forwarding and optimized protocol bottlenecks."
   },
   {
     title: "Autonomous Telemetry",
     subtitle: "Control Systems",
-    description: "Engineered electrical and mechanical systems for a gas powered vehicle[cite: 4, 6]. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors[cite: 4, 6].",
-    img: "/images/IMG_0851.jpeg"
+    description: "Engineered electrical and mechanical systems for a gas powered vehicle. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors."
   }
 ];
 
 const HOBBIES = [
   {
     title: "Digital Production and Audio",
-    description: "Extensive background in guitar performance and audio engineering. Produced three full length albums and one single including a Vevo featured music video.",
-    img: "/images/complex_bread_2.jpeg"
+    description: "Extensive background in guitar performance and audio engineering. Produced three full length albums and one single including a Vevo featured music video."
   },
   {
     title: "Mechanical Performance",
-    description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization.",
-    img: "/images/IMG_1716.jpeg"
+    description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization."
   },
   {
     title: "Community Impact",
-    description: "Dedicated to outdoor exploration and community service. Active volunteer with Operation Christmas Child and various non profit organizations.",
-    img: "/images/IMG_1349.jpeg"
+    description: "Dedicated to outdoor exploration and community service. Active volunteer with Operation Christmas Child and various non profit organizations."
   }
 ];
 
@@ -124,14 +117,18 @@ export default function App() {
         </div>
       </div>
 
-      {/* SECTION 3: FEATURED PROJECT (CAD GUITAR) */}
+      {/* SECTION 3: FEATURED PROJECT (CAD GUITAR - FIXED) */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        <img 
-          src="/images/image_1.png" 
-          alt="Hardware Design" 
-          className="absolute inset-0 w-full h-full object-contain opacity-50 p-12"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50"></div>
+        {/* Placed the transparent PNG in a flex container to center it as an object rather than a stretched background */}
+        <div className="absolute inset-0 flex items-center justify-center pb-32 px-12">
+           <img 
+            src="/images/image_1.png" 
+            alt="Hardware Design" 
+            className="w-full max-w-5xl object-contain opacity-90 drop-shadow-[0_0_50px_rgba(255,255,255,0.1)]"
+          />
+        </div>
+        {/* Adjusted the gradient to only darken the bottom area behind the text */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent h-2/3 mt-auto"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">
             Systems Architecture
@@ -143,7 +140,7 @@ export default function App() {
             onClick={() => setCurrentPage('projects')}
             className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm"
           >
-            View Engineering Dossier
+            View Engineering Projects
           </button>
         </div>
       </div>
@@ -194,8 +191,9 @@ export default function App() {
               </button>
             </div>
             <div className={idx % 2 === 1 ? 'md:order-1' : ''}>
-              <div className="w-full aspect-[4/3] bg-zinc-900 overflow-hidden relative">
-                <img src={proj.img} alt={proj.title} className="w-full h-full object-cover object-center opacity-80 hover:opacity-100 transition-opacity duration-500" />
+              {/* Restored Structural Placeholder for future images */}
+              <div className="w-full aspect-[4/3] bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
+                Project Image Placeholder
               </div>
             </div>
           </div>
@@ -212,8 +210,8 @@ export default function App() {
         <div>
           <div className="mb-24">
             <h1 className="text-5xl font-bold tracking-tighter mb-12 text-white uppercase">Professional Background</h1>
-            <div className="w-full aspect-[3/4] bg-zinc-900 mb-8 overflow-hidden">
-              <img src="/images/Official2.png" alt="Justin Allen Portrait" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+            <div className="w-full aspect-[3/4] bg-zinc-900 mb-8 overflow-hidden border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
+               Portrait Image Placeholder
             </div>
           </div>
 
@@ -239,8 +237,9 @@ export default function App() {
             <div className="space-y-24">
               {HOBBIES.map((hobby, i) => (
                 <div key={i}>
-                  <div className="w-full aspect-video bg-zinc-900 mb-6 overflow-hidden">
-                    <img src={hobby.img} alt={hobby.title} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+                   {/* Restored Structural Placeholder for future images */}
+                  <div className="w-full aspect-video bg-zinc-900 mb-6 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
+                    Pursuit Image Placeholder
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-tight">{hobby.title}</h3>
                   <p className="text-zinc-400 text-base leading-relaxed">{hobby.description}</p>
