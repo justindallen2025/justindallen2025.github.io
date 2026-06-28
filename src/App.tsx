@@ -89,7 +89,6 @@ export default function App() {
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        {/* Removed mx-auto to restore the left-aligned striking look */}
         <div className="relative z-10 max-w-4xl pb-12">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">
             Justin Allen
@@ -114,7 +113,7 @@ export default function App() {
             Tactical Operations
           </h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Currently a Software Engineering Intern in ANGPD for the GTTAK project[cite: 2]. Architecting deployable server environments and routing live video feeds for cross agency situational awareness platforms[cite: 4].
+            Currently a Software Engineering Intern in ANGPD for the GTTAK project. Architecting deployable server environments and routing live video feeds for cross agency situational awareness platforms.
           </p>
           <button 
             onClick={() => setCurrentPage('about')}
@@ -128,7 +127,7 @@ export default function App() {
       {/* SECTION 3: FEATURED PROJECT (CAD GUITAR) */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
         <img 
-          src="/images/image_1_2.png" 
+          src="/images/image_1.png" 
           alt="Hardware Design" 
           className="absolute inset-0 w-full h-full object-contain opacity-50 p-12"
         />
@@ -138,7 +137,7 @@ export default function App() {
             Systems Architecture
           </h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Developing modular computing platforms and custom routed circuit boards[cite: 4, 6]. Utilizing microcontrollers and low latency algorithms to build high fidelity systems and complex hardware integrations[cite: 4, 6].
+            Developing modular computing platforms and custom routed circuit boards. Utilizing microcontrollers and low latency algorithms to build high fidelity systems and complex hardware integrations.
           </p>
           <button 
             onClick={() => setCurrentPage('projects')}
@@ -162,7 +161,7 @@ export default function App() {
             Personal Pursuits
           </h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Passionate about mountain biking and automotive mechanics. Dedicated to community service through Operation Christmas Child and producing original music including three albums and a featured music video.
+            Passionate about mountain biking and automotive mechanics. Dedicated to community service and producing original music.
           </p>
           <button 
             onClick={() => setCurrentPage('about')}
