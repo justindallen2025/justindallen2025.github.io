@@ -7,8 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'neon-cyan': '#00f3ff',
-        'electric-purple': '#b026ff',
+        background: '#050505',
+        primary: '#ffffff',
+        secondary: '#a1a1aa',
+        accent: '#e4e4e7',
       }
     },
   },
