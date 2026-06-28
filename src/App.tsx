@@ -5,13 +5,13 @@ const EXPERIENCE = [
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
     period: "May 2026 to Present",
-    desc: "Architecting tactical network environments[cite: 4]. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks[cite: 4]."
+    desc: "Architecting tactical network environments. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks."
   },
   {
     role: "IT Intern",
     company: "Fellowship Christian School",
     period: "Jan 2024",
-    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure[cite: 6]."
+    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure."
   }
 ];
 
@@ -19,22 +19,22 @@ const PROJECTS = [
   {
     title: "Project CORE",
     subtitle: "Digital Signal Processing Architecture",
-    description: "Modular embedded audio digital signal processing system[cite: 4, 6]. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller[cite: 4, 6].",
+    description: "Modular embedded audio digital signal processing system. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller.",
   },
   {
     title: "Catalyst Cloud Burn Tracker",
     subtitle: "Financial Alerting Pipeline",
-    description: "Proactive cloud credit and software burn tracker for founders[cite: 4]. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting[cite: 4].",
+    description: "Proactive cloud credit and software burn tracker for founders. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting.",
   },
   {
     title: "Distributed Server Operations",
     subtitle: "High Concurrency Infrastructure",
-    description: "Deployed and managed a high performance Linux based server environment[cite: 4, 6]. Configured TCP and UDP port forwarding and optimized protocol bottlenecks[cite: 4, 6].",
+    description: "Deployed and managed a high performance Linux based server environment. Configured TCP and UDP port forwarding and optimized protocol bottlenecks.",
   },
   {
     title: "Autonomous Telemetry",
     subtitle: "Control Systems",
-    description: "Engineered electrical and mechanical systems for a gas powered vehicle[cite: 4, 6]. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors[cite: 4, 6].",
+    description: "Engineered electrical and mechanical systems for a gas powered vehicle. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors.",
   }
 ];
 
@@ -45,7 +45,7 @@ const HOBBIES = [
   },
   {
     title: "Mechanical Performance",
-    description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization[cite: 4, 6]."
+    description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization."
   },
   {
     title: "Community Impact",
@@ -81,7 +81,7 @@ export default function App() {
             Justin Allen
           </h1>
           <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">
-            Computer Science Georgia Tech[cite: 4, 6]. Software Engineer Intern at GTRI[cite: 4, 6]. 
+            Computer Science Georgia Tech. Software Engineer Intern at GTRI. 
             Bridging high level software with bare metal performance.
           </p>
         </div>
@@ -90,9 +90,9 @@ export default function App() {
       <div className="max-w-7xl mx-auto px-8 py-32">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Current Mission</h3>
+            <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Current Focus</h3>
             <p className="text-lg text-zinc-300 leading-relaxed">
-              I focus on embedded systems and low level optimization. Currently I reverse engineer firmware and model tactical network environments to solve complex reliability problems[cite: 6].
+              I focus on embedded systems and low level optimization. Currently I reverse engineer firmware and model tactical network environments to solve complex reliability problems.
             </p>
           </div>
           <div className="md:col-span-2">
@@ -109,7 +109,7 @@ export default function App() {
   const renderProjects = () => (
     <div className="max-w-7xl mx-auto px-8 py-24 animate-in fade-in duration-1000">
       <header className="mb-24">
-        <h1 className="text-5xl font-bold tracking-tighter mb-6 text-white">Engineering Dossier</h1>
+        <h1 className="text-5xl font-bold tracking-tighter mb-6 text-white">Core Engineering</h1>
         <p className="text-xl text-zinc-400 max-w-2xl">Hardware architecture and full stack systems designed for zero latency and high availability.</p>
       </header>
 
@@ -143,7 +143,7 @@ export default function App() {
         {/* LEFT COLUMN */}
         <div>
           <div className="mb-24">
-            <h1 className="text-5xl font-bold tracking-tighter mb-12 text-white">The Architect</h1>
+            <h1 className="text-5xl font-bold tracking-tighter mb-12 text-white">Professional Background</h1>
             {/* PORTRAIT IMAGE PLACEHOLDER */}
             <div className="w-full aspect-[3/4] bg-zinc-900 mb-8 flex items-center justify-center text-zinc-800 text-sm tracking-widest uppercase">
               Portrait Image Placeholder
