@@ -57,17 +57,20 @@ const HOBBIES = [
   {
     title: "Digital Production and Audio",
     description: "Extensive background in guitar performance and audio engineering. Produced three full length albums and one single including a Vevo featured music video.",
-    img: "/images/music.png"
+    img: "/images/music.png",
+    imgClass: "object-cover object-center"
   },
   {
     title: "Mechanical Performance",
     description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization.",
-    img: "/images/IMG_1261_2.jpeg"
+    img: "/images/IMG_1261.jpeg",
+    imgClass: "object-cover object-center"
   },
   {
     title: "Community Impact",
     description: "Dedicated to outdoor exploration and community service. Active volunteer with Operation Christmas Child and various non profit organizations.",
-    img: "/images/7E6B1CF2-3034-42E1-994C-AA2054D26435_1_105_c.jpeg"
+    img: "/images/7E6B1CF2-3034-42E1-994C-AA2054D26435_1_105_c.jpeg",
+    imgClass: "object-cover object-top" // Anchors the crop to the top of the photo
   }
 ];
 
@@ -148,8 +151,8 @@ export default function App() {
   const renderProjects = () => (
     <div className="animate-in fade-in duration-1000">
       
-      {/* PROJECTS BANNER */}
-      <div className="w-full h-[55vh] bg-black flex flex-col justify-end p-12 relative overflow-hidden">
+      {/* PROJECTS BANNER - Now full h-screen */}
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
         <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
         <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pb-4">
@@ -159,7 +162,7 @@ export default function App() {
       </div>
 
       {/* PROJECTS LIST */}
-      <div className="max-w-7xl mx-auto px-8 py-24 space-y-48">
+      <div className="max-w-7xl mx-auto px-8 py-32 space-y-48">
         {PROJECTS.map((proj, idx) => (
           <div key={idx} className="grid md:grid-cols-2 gap-16 items-center">
             <div className={idx % 2 === 1 ? 'md:order-2' : ''}>
@@ -190,91 +193,97 @@ export default function App() {
   );
 
   const renderAbout = () => (
-    <div className="max-w-7xl mx-auto px-8 pt-48 pb-24 animate-in fade-in duration-1000">
-      <div className="grid md:grid-cols-12 gap-16">
+    <div className="animate-in fade-in duration-1000">
+
+      {/* ABOUT BANNER */}
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
+        {/* Placeholder background - can swap with a real image later */}
+        <img src="/images/IMG_1349.jpeg" alt="Background Placeholder" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pb-4">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-white uppercase">Experience & About</h1>
+          <p className="text-xl text-zinc-400 max-w-2xl">Professional background, technical capabilities, and personal pursuits.</p>
+        </div>
+      </div>
+
+      {/* SINGLE COLUMN SCROLLING CONTENT */}
+      <div className="max-w-4xl mx-auto px-8 py-32 space-y-32">
         
-        {/* LEFT COLUMN - Sticky Profile & Bio */}
-        <div className="md:col-span-5 md:sticky md:top-32 h-fit">
-          <div className="mb-12">
-            <h1 className="text-5xl font-bold tracking-tighter mb-8 text-white uppercase">Dossier</h1>
-            
-            {/* PROFILE IMAGE - Using bg-zinc-900 to give the transparent PNG a solid studio backdrop */}
-            <div className="w-full aspect-[4/5] bg-zinc-900 mb-8 overflow-hidden flex items-end justify-center pt-8 border border-zinc-800">
-              <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[85%] h-auto object-contain drop-shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
-            </div>
-            
-            <h2 className="text-2xl font-bold text-white mb-4 uppercase">Justin Allen</h2>
-            <p className="text-zinc-400 leading-relaxed mb-6">
+        {/* BIO SECTION */}
+        <div className="grid md:grid-cols-3 gap-12 items-center">
+          <div className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden border border-zinc-800">
+            {/* Object-top and object-cover ensure full bleed and face focus without grayscale */}
+            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-full h-full object-cover object-top drop-shadow-2xl" />
+          </div>
+          <div className="md:col-span-2">
+            <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Justin Allen</h2>
+            <p className="text-zinc-400 leading-relaxed mb-6 text-lg">
               I am a Computer Science student at the Georgia Institute of Technology specializing in Information Internetworks and Cybersecurity. My engineering focus lies at the intersection of high level software architecture and bare metal embedded systems.
             </p>
-            <p className="text-zinc-400 leading-relaxed">
-              From reverse engineering firmware for tactical network environments to developing low latency digital signal processing algorithms I build systems designed for absolute reliability and performance.
+            <p className="text-zinc-400 leading-relaxed text-lg">
+              From reverse engineering firmware for tactical network environments to developing low latency digital signal processing algorithms, I build systems designed for absolute reliability and performance.
             </p>
           </div>
         </div>
 
-        {/* RIGHT COLUMN - Scrolling CV Details */}
-        <div className="md:col-span-7 md:pt-24 space-y-32">
-          
-          {/* EDUCATION */}
-          <section>
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Academic Background</h2>
-            <div>
-              <h3 className="text-xl font-bold text-white mb-1 uppercase tracking-tight">Georgia Institute of Technology</h3>
-              <div className="text-zinc-400 text-sm mb-4">Bachelor of Science in Computer Science</div>
-              <ul className="text-zinc-400 text-base space-y-2 leading-relaxed">
-                <li>Expected Graduation December 2028</li>
-                <li>Threads Information Internetworks and Cybersecurity and Privacy</li>
-                <li>Zell Miller Scholarship and Deans List</li>
-              </ul>
-            </div>
-          </section>
+        {/* EDUCATION */}
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Academic Background</h2>
+          <div>
+            <h3 className="text-xl font-bold text-white mb-1 uppercase tracking-tight">Georgia Institute of Technology</h3>
+            <div className="text-zinc-400 text-sm mb-4">Bachelor of Science in Computer Science</div>
+            <ul className="text-zinc-400 text-base space-y-2 leading-relaxed">
+              <li>Expected Graduation December 2028</li>
+              <li>Threads Information Internetworks and Cybersecurity and Privacy</li>
+              <li>Zell Miller Scholarship and Deans List</li>
+            </ul>
+          </div>
+        </section>
 
-          {/* TECHNICAL SKILLS */}
-          <section>
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Technical Capabilities</h2>
-            <div className="space-y-6">
-              {SKILLS.map((skill, i) => (
-                <div key={i}>
-                  <h3 className="text-sm font-bold text-white mb-2 uppercase">{skill.category}</h3>
-                  <p className="text-zinc-400 text-base leading-relaxed">{skill.items}</p>
+        {/* TECHNICAL SKILLS */}
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Technical Capabilities</h2>
+          <div className="space-y-6">
+            {SKILLS.map((skill, i) => (
+              <div key={i}>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase">{skill.category}</h3>
+                <p className="text-zinc-400 text-base leading-relaxed">{skill.items}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* EXPERIENCE */}
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Professional History</h2>
+          <div className="space-y-12">
+            {EXPERIENCE.map((exp, i) => (
+              <div key={i}>
+                <div className="text-zinc-500 text-xs tracking-widest uppercase mb-2">{exp.period}</div>
+                <h3 className="text-xl font-bold text-white mb-1 uppercase tracking-tight">{exp.role}</h3>
+                <div className="text-zinc-400 text-sm mb-4">{exp.company}</div>
+                <p className="text-zinc-400 text-base leading-relaxed">{exp.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* HOBBIES / PURSUITS */}
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-12 border-b border-zinc-800 pb-4">Personal Pursuits</h2>
+          <div className="space-y-24">
+            {HOBBIES.map((hobby, i) => (
+              <div key={i}>
+                <div className="w-full aspect-video bg-zinc-900 mb-6 overflow-hidden border border-zinc-800">
+                  <img src={hobby.img} alt={hobby.title} className={`w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-500 ${hobby.imgClass}`} />
                 </div>
-              ))}
-            </div>
-          </section>
+                <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-tight">{hobby.title}</h3>
+                <p className="text-zinc-400 text-base leading-relaxed">{hobby.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-          {/* EXPERIENCE */}
-          <section>
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Professional History</h2>
-            <div className="space-y-12">
-              {EXPERIENCE.map((exp, i) => (
-                <div key={i}>
-                  <div className="text-zinc-500 text-xs tracking-widest uppercase mb-2">{exp.period}</div>
-                  <h3 className="text-xl font-bold text-white mb-1 uppercase tracking-tight">{exp.role}</h3>
-                  <div className="text-zinc-400 text-sm mb-4">{exp.company}</div>
-                  <p className="text-zinc-400 text-base leading-relaxed">{exp.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* HOBBIES / PURSUITS */}
-          <section>
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-12 border-b border-zinc-800 pb-4">Personal Pursuits</h2>
-            <div className="space-y-24">
-              {HOBBIES.map((hobby, i) => (
-                <div key={i}>
-                  <div className="w-full aspect-video bg-zinc-900 mb-6 overflow-hidden border border-zinc-800">
-                    <img src={hobby.img} alt={hobby.title} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-tight">{hobby.title}</h3>
-                  <p className="text-zinc-400 text-base leading-relaxed">{hobby.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-        </div>
       </div>
     </div>
   );
