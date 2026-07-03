@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
 
+const SKILLS = [
+  { category: "Languages", items: "Java, Python, C++, C, Bash, XML, JavaScript, HTML, CSS" },
+  { category: "Embedded Systems", items: "ARM Cortex M7, Arduino, Atmel, Custom PCB Design, I2C, SPI, UART, Fusion 360" },
+  { category: "Cybersecurity and Ops", items: "Network Architecture, Headless Linux Administration, TCP and UDP Networking, REST APIs, Wireshark, Nmap, Ansible" },
+  { category: "Core Concepts", items: "Digital Signal Processing, Object Oriented Design, Memory Management, Data Simulation" }
+];
+
 const EXPERIENCE = [
   {
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
     period: "May 2026 to Present",
-    desc: "Architecting tactical network environments. Engineering Python and Node-RED middleware for real-time sensor ingestion across federal and state networks."
+    desc: "Architecting tactical network environments. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks. Modeling secure sensor broadcasting and cross agency situational awareness protocols."
   },
   {
     role: "IT Intern",
     company: "Fellowship Christian School",
     period: "Jan 2024",
     desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure."
+  },
+  {
+    role: "Operations Intern",
+    company: "Roswell Police Department",
+    period: "Jan 2024",
+    desc: "Shadowed dispatch and records divisions observing protocols for handling sensitive data and rapid information relay during critical incidents. Analyzed technical infrastructure used to coordinate first responder location tracking."
   }
 ];
 
@@ -43,15 +56,18 @@ const PROJECTS = [
 const HOBBIES = [
   {
     title: "Digital Production and Audio",
-    description: "Extensive background in guitar performance and audio engineering. Produced three full length albums and one single including a Vevo featured music video."
+    description: "Extensive background in guitar performance and audio engineering. Produced three full length albums and one single including a Vevo featured music video.",
+    img: "/images/music.png"
   },
   {
     title: "Mechanical Performance",
-    description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization."
+    description: "Active in mountain biking and automotive mechanics focusing on physical endurance and mechanical optimization.",
+    img: "/images/IMG_1261_2.jpeg"
   },
   {
     title: "Community Impact",
-    description: "Dedicated to outdoor exploration and community service. Active volunteer with Operation Christmas Child and various non profit organizations."
+    description: "Dedicated to outdoor exploration and community service. Active volunteer with Operation Christmas Child and various non profit organizations.",
+    img: "/images/7E6B1CF2-3034-42E1-994C-AA2054D26435_1_105_c.jpeg"
   }
 ];
 
@@ -134,7 +150,6 @@ export default function App() {
       
       {/* PROJECTS BANNER */}
       <div className="w-full h-[55vh] bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        {/* Using option2.png with a screen blend mode to make it look like glowing data */}
         <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
         <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pb-4">
@@ -152,7 +167,6 @@ export default function App() {
               <h3 className="text-4xl font-bold mb-6 text-white uppercase">{proj.title}</h3>
               <p className="text-lg text-zinc-400 leading-relaxed mb-8">{proj.description}</p>
               
-              {/* Conditionally render the button only if a link is provided */}
               {proj.linkUrl && (
                 <a 
                   href={proj.linkUrl} 
@@ -177,19 +191,61 @@ export default function App() {
 
   const renderAbout = () => (
     <div className="max-w-7xl mx-auto px-8 pt-48 pb-24 animate-in fade-in duration-1000">
-      <div className="grid md:grid-cols-2 gap-24">
+      <div className="grid md:grid-cols-12 gap-16">
         
-        {/* LEFT COLUMN */}
-        <div>
-          <div className="mb-24">
-            <h1 className="text-5xl font-bold tracking-tighter mb-12 text-white uppercase">Professional Background</h1>
-            <div className="w-full aspect-[3/4] bg-zinc-900 mb-8 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
-               Portrait Image Placeholder
+        {/* LEFT COLUMN - Sticky Profile & Bio */}
+        <div className="md:col-span-5 md:sticky md:top-32 h-fit">
+          <div className="mb-12">
+            <h1 className="text-5xl font-bold tracking-tighter mb-8 text-white uppercase">Dossier</h1>
+            
+            {/* PROFILE IMAGE - Using bg-zinc-900 to give the transparent PNG a solid studio backdrop */}
+            <div className="w-full aspect-[4/5] bg-zinc-900 mb-8 overflow-hidden flex items-end justify-center pt-8 border border-zinc-800">
+              <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[85%] h-auto object-contain drop-shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
             </div>
+            
+            <h2 className="text-2xl font-bold text-white mb-4 uppercase">Justin Allen</h2>
+            <p className="text-zinc-400 leading-relaxed mb-6">
+              I am a Computer Science student at the Georgia Institute of Technology specializing in Information Internetworks and Cybersecurity. My engineering focus lies at the intersection of high level software architecture and bare metal embedded systems.
+            </p>
+            <p className="text-zinc-400 leading-relaxed">
+              From reverse engineering firmware for tactical network environments to developing low latency digital signal processing algorithms I build systems designed for absolute reliability and performance.
+            </p>
           </div>
+        </div>
 
+        {/* RIGHT COLUMN - Scrolling CV Details */}
+        <div className="md:col-span-7 md:pt-24 space-y-32">
+          
+          {/* EDUCATION */}
           <section>
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-12 border-b border-zinc-800 pb-4">Professional History</h2>
+            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Academic Background</h2>
+            <div>
+              <h3 className="text-xl font-bold text-white mb-1 uppercase tracking-tight">Georgia Institute of Technology</h3>
+              <div className="text-zinc-400 text-sm mb-4">Bachelor of Science in Computer Science</div>
+              <ul className="text-zinc-400 text-base space-y-2 leading-relaxed">
+                <li>Expected Graduation December 2028</li>
+                <li>Threads Information Internetworks and Cybersecurity and Privacy</li>
+                <li>Zell Miller Scholarship and Deans List</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* TECHNICAL SKILLS */}
+          <section>
+            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Technical Capabilities</h2>
+            <div className="space-y-6">
+              {SKILLS.map((skill, i) => (
+                <div key={i}>
+                  <h3 className="text-sm font-bold text-white mb-2 uppercase">{skill.category}</h3>
+                  <p className="text-zinc-400 text-base leading-relaxed">{skill.items}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* EXPERIENCE */}
+          <section>
+            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Professional History</h2>
             <div className="space-y-12">
               {EXPERIENCE.map((exp, i) => (
                 <div key={i}>
@@ -201,17 +257,15 @@ export default function App() {
               ))}
             </div>
           </section>
-        </div>
 
-        {/* RIGHT COLUMN */}
-        <div className="md:pt-48">
-          <section className="mb-24">
+          {/* HOBBIES / PURSUITS */}
+          <section>
             <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-12 border-b border-zinc-800 pb-4">Personal Pursuits</h2>
             <div className="space-y-24">
               {HOBBIES.map((hobby, i) => (
                 <div key={i}>
-                  <div className="w-full aspect-video bg-zinc-900 mb-6 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
-                    Pursuit Image Placeholder
+                  <div className="w-full aspect-video bg-zinc-900 mb-6 overflow-hidden border border-zinc-800">
+                    <img src={hobby.img} alt={hobby.title} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-tight">{hobby.title}</h3>
                   <p className="text-zinc-400 text-base leading-relaxed">{hobby.description}</p>
@@ -219,8 +273,8 @@ export default function App() {
               ))}
             </div>
           </section>
-        </div>
 
+        </div>
       </div>
     </div>
   );
