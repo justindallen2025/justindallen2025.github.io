@@ -5,7 +5,7 @@ const EXPERIENCE = [
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
     period: "May 2026 to Present",
-    desc: "Architecting tactical network environments. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks."
+    desc: "Architecting tactical network environments. Engineering Python and Node-RED middleware for real-time sensor ingestion across federal and state networks."
   },
   {
     role: "IT Intern",
@@ -103,7 +103,6 @@ export default function App() {
 
       {/* SECTION 3: SYSTEMS ARCHITECTURE */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        {/* Full width CAD image using object-cover per your request */}
         <img src="/images/image_1.png" alt="Hardware Design" className="absolute inset-0 w-full h-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
@@ -131,13 +130,21 @@ export default function App() {
   );
 
   const renderProjects = () => (
-    <div className="max-w-7xl mx-auto px-8 pt-48 pb-24 animate-in fade-in duration-1000">
-      <header className="mb-24">
-        <h1 className="text-5xl font-bold tracking-tighter mb-6 text-white uppercase">Core Engineering</h1>
-        <p className="text-xl text-zinc-400 max-w-2xl">Hardware architecture and full stack systems designed for zero latency and high availability.</p>
-      </header>
+    <div className="animate-in fade-in duration-1000">
+      
+      {/* PROJECTS BANNER */}
+      <div className="w-full h-[55vh] bg-black flex flex-col justify-end p-12 relative overflow-hidden">
+        {/* Using option2.png with a screen blend mode to make it look like glowing data */}
+        <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pb-4">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-white uppercase">Engineering</h1>
+          <p className="text-xl text-zinc-400 max-w-2xl">Hardware architecture and full stack systems designed for zero latency and high availability.</p>
+        </div>
+      </div>
 
-      <div className="space-y-48">
+      {/* PROJECTS LIST */}
+      <div className="max-w-7xl mx-auto px-8 py-24 space-y-48">
         {PROJECTS.map((proj, idx) => (
           <div key={idx} className="grid md:grid-cols-2 gap-16 items-center">
             <div className={idx % 2 === 1 ? 'md:order-2' : ''}>
