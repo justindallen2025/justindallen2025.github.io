@@ -77,7 +77,6 @@ const HOBBIES = [
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
-  // Helper function to scroll to top automatically when clicking a link
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -157,7 +156,7 @@ export default function App() {
   const renderProjects = () => (
     <div className="animate-in fade-in duration-1000">
       
-      {/* PROJECTS BANNER - Unified Title Styling and Brightened Background */}
+      {/* PROJECTS BANNER */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
         <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -201,9 +200,9 @@ export default function App() {
   const renderAbout = () => (
     <div className="animate-in fade-in duration-1000">
 
-      {/* ABOUT BANNER - Unified Title Styling, Klaus Building, Brightened Background */}
+      {/* ABOUT BANNER - Adjusted object-[50%_30%] to reveal the top of Klaus */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        <img src="/images/EFFD921D-DEE4-4A6A-9D22-AEE17F6375D5_1_105_c.jpeg" alt="Georgia Tech Klaus Building" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <img src="/images/EFFD921D-DEE4-4A6A-9D22-AEE17F6375D5_1_105_c.jpeg" alt="Georgia Tech Klaus Building" className="absolute inset-0 w-full h-full object-cover object-[50%_30%] opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 w-full">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Experience & About</h1>
@@ -217,9 +216,9 @@ export default function App() {
         {/* BIO SECTION */}
         <div className="grid md:grid-cols-3 gap-12 items-center">
           
-          {/* PROFILE IMAGE - Centered, zoomed in, removed grayscale */}
+          {/* PROFILE IMAGE - Added translate-x-3 to perfectly center the face */}
           <div className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden border border-zinc-800 flex items-end justify-center relative">
-            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[115%] max-w-none h-auto object-contain object-bottom drop-shadow-2xl translate-y-4" />
+            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[115%] max-w-none h-auto object-contain object-bottom drop-shadow-2xl translate-y-4 translate-x-3" />
           </div>
           
           <div className="md:col-span-2">
