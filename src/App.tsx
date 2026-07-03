@@ -101,8 +101,8 @@ export default function App() {
     <div className="animate-in fade-in duration-1000">
       
       {/* SECTION 1: HERO */}
-      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        <img src="/images/IMG_0851.jpeg" alt="Embedded Hardware" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden group">
+        <img src="/images/IMG_0851.jpeg" alt="Embedded Hardware" className="absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 w-full">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Justin Allen</h1>
@@ -113,8 +113,8 @@ export default function App() {
       </div>
 
       {/* SECTION 2: TACTICAL OPERATIONS */}
-      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        <img src="/images/IMG_1349.jpeg" alt="Tactical Network" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900 group">
+        <img src="/images/IMG_1349.jpeg" alt="Tactical Network" className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/70"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Tactical Operations</h2>
@@ -126,8 +126,8 @@ export default function App() {
       </div>
 
       {/* SECTION 3: SYSTEMS ARCHITECTURE */}
-      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        <img src="/images/image_1.png" alt="Hardware Design" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900 group">
+        <img src="/images/image_1.png" alt="Hardware Design" className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Systems Architecture</h2>
@@ -139,8 +139,8 @@ export default function App() {
       </div>
 
       {/* SECTION 4: PERFORMANCE */}
-      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        <img src="/images/IMG_1716.jpeg" alt="Mountain Biking" className="absolute inset-0 w-full h-full object-cover opacity-80" />
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900 group">
+        <img src="/images/IMG_1716.jpeg" alt="Mountain Biking" className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Personal Pursuits</h2>
@@ -157,8 +157,8 @@ export default function App() {
     <div className="animate-in fade-in duration-1000">
       
       {/* PROJECTS BANNER */}
-      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen" />
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden group">
+        <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 w-full">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Engineering</h1>
@@ -169,7 +169,7 @@ export default function App() {
       {/* PROJECTS LIST */}
       <div className="max-w-7xl mx-auto px-8 py-32 space-y-48">
         {PROJECTS.map((proj, idx) => (
-          <div key={idx} className="grid md:grid-cols-2 gap-16 items-center">
+          <div key={idx} className="grid md:grid-cols-2 gap-16 items-center group">
             <div className={idx % 2 === 1 ? 'md:order-2' : ''}>
               <h2 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">{proj.subtitle}</h2>
               <h3 className="text-4xl font-bold mb-6 text-white uppercase">{proj.title}</h3>
@@ -188,7 +188,8 @@ export default function App() {
             </div>
             <div className={idx % 2 === 1 ? 'md:order-1' : ''}>
               <div className="w-full aspect-[4/3] bg-zinc-900 border border-zinc-800 overflow-hidden relative">
-                <img src={proj.img} alt={proj.title} className="w-full h-full object-cover object-center opacity-80 hover:opacity-100 transition-opacity duration-500" />
+                {/* Added scale transition on hover */}
+                <img src={proj.img} alt={proj.title} className="w-full h-full object-cover object-center opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100" />
               </div>
             </div>
           </div>
@@ -200,9 +201,9 @@ export default function App() {
   const renderAbout = () => (
     <div className="animate-in fade-in duration-1000">
 
-      {/* ABOUT BANNER - Adjusted object-[50%_30%] to reveal the top of Klaus */}
-      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        <img src="/images/EFFD921D-DEE4-4A6A-9D22-AEE17F6375D5_1_105_c.jpeg" alt="Georgia Tech Klaus Building" className="absolute inset-0 w-full h-full object-cover object-[50%_30%] opacity-60" />
+      {/* ABOUT BANNER - Reverted to default object position */}
+      <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden group">
+        <img src="/images/EFFD921D-DEE4-4A6A-9D22-AEE17F6375D5_1_105_c.jpeg" alt="Georgia Tech Klaus Building" className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 w-full">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Experience & About</h1>
@@ -214,11 +215,11 @@ export default function App() {
       <div className="max-w-4xl mx-auto px-8 py-32 space-y-32">
         
         {/* BIO SECTION */}
-        <div className="grid md:grid-cols-3 gap-12 items-center">
+        <div className="grid md:grid-cols-3 gap-12 items-center group">
           
-          {/* PROFILE IMAGE - Added translate-x-3 to perfectly center the face */}
+          {/* PROFILE IMAGE - Added scale transition on hover */}
           <div className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden border border-zinc-800 flex items-end justify-center relative">
-            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[115%] max-w-none h-auto object-contain object-bottom drop-shadow-2xl translate-y-4 translate-x-3" />
+            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[115%] max-w-none h-auto object-contain object-bottom drop-shadow-2xl translate-y-4 translate-x-3 transition-transform duration-700 group-hover:scale-105" />
           </div>
           
           <div className="md:col-span-2">
@@ -279,9 +280,10 @@ export default function App() {
           <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-12 border-b border-zinc-800 pb-4">Personal Pursuits</h2>
           <div className="space-y-24">
             {HOBBIES.map((hobby, i) => (
-              <div key={i}>
+              <div key={i} className="group">
                 <div className="w-full aspect-video bg-zinc-900 mb-6 overflow-hidden border border-zinc-800">
-                  <img src={hobby.img} alt={hobby.title} className={`w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-500 ${hobby.imgClass}`} />
+                  {/* Added scale transition on hover */}
+                  <img src={hobby.img} alt={hobby.title} className={`w-full h-full opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 ${hobby.imgClass}`} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-tight">{hobby.title}</h3>
                 <p className="text-zinc-400 text-base leading-relaxed">{hobby.description}</p>
