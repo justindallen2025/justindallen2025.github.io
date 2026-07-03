@@ -5,7 +5,7 @@ const EXPERIENCE = [
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
     period: "May 2026 to Present",
-    desc: "Architecting tactical network environments. Engineering Python and Node-RED middleware for real-time sensor ingestion across federal and state networks."
+    desc: "Architecting tactical network environments. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks."
   },
   {
     role: "IT Intern",
@@ -19,22 +19,24 @@ const PROJECTS = [
   {
     title: "Project CORE",
     subtitle: "Digital Signal Processing Architecture",
-    description: "Modular embedded audio digital signal processing system. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing an ARM Cortex M7 microcontroller."
+    description: "Modular embedded audio digital signal processing system. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing a 480 MHz ARM Cortex M7 microcontroller.",
+    img: "/images/FullSizeRender.jpeg",
+    linkText: "View Website",
+    linkUrl: "https://coremusictech.com"
   },
   {
     title: "Catalyst Cloud Burn Tracker",
     subtitle: "Financial Alerting Pipeline",
-    description: "Proactive cloud credit and software burn tracker for founders. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting."
+    description: "Proactive cloud credit and software burn tracker for founders. Integrated Plaid and Gmail APIs with a Gemini backend for real time runway forecasting.",
+    img: "/images/catalyst.png",
+    linkText: "View Devpost",
+    linkUrl: "https://devpost.com/software/catalyst-6x758e"
   },
   {
     title: "Distributed Server Operations",
     subtitle: "High Concurrency Infrastructure",
-    description: "Deployed and managed a high performance Linux based server environment. Configured TCP and UDP port forwarding and optimized protocol bottlenecks."
-  },
-  {
-    title: "Autonomous Telemetry",
-    subtitle: "Control Systems",
-    description: "Engineered electrical and mechanical systems for a gas powered vehicle. Programmed Arduino microcontrollers to monitor RPM and speed data via Hall Effect sensors."
+    description: "Deployed and managed a high performance Linux based private server environment. Learned the basics of SSH server administration and local network deployment via custom firewall rules.",
+    img: "/images/terminal.png"
   }
 ];
 
@@ -76,99 +78,55 @@ export default function App() {
       
       {/* SECTION 1: HERO */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        <img 
-          src="/images/IMG_0851.jpeg" 
-          alt="Embedded Hardware" 
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
+        <img src="/images/IMG_0851.jpeg" alt="Embedded Hardware" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">
-            Justin Allen
-          </h1>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Justin Allen</h1>
           <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">
-            Computer Science Georgia Tech and Software Engineer Intern at GTRI. 
-            Bridging high level software with bare metal performance.
+            Computer Science Georgia Tech and Software Engineer Intern at GTRI. Bridging high level software with bare metal performance.
           </p>
         </div>
       </div>
 
-      {/* SECTION 2: CURRENT FOCUS (SATELLITES) */}
+      {/* SECTION 2: TACTICAL OPERATIONS */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        <img 
-          src="/images/IMG_1349.jpeg" 
-          alt="Tactical Network Infrastructure" 
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
-        />
+        <img src="/images/IMG_1349.jpeg" alt="Tactical Network" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/70"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">
-            Tactical Operations
-          </h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Tactical Operations</h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
             Currently a Software Engineering Intern in ANGPD for the GTTAK project. Architecting deployable server environments and routing live video feeds for cross agency situational awareness platforms.
           </p>
-          <button 
-            onClick={() => setCurrentPage('about')}
-            className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm"
-          >
-            Read Background
-          </button>
+          <button onClick={() => setCurrentPage('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">Read Background</button>
         </div>
       </div>
 
-      {/* SECTION 3: FEATURED PROJECT (CAD GUITAR - FIXED) */}
+      {/* SECTION 3: SYSTEMS ARCHITECTURE */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        {/* Placed the transparent PNG in a flex container to center it as an object rather than a stretched background */}
-        <div className="absolute inset-0 flex items-center justify-center pb-32 px-12">
-           <img 
-            src="/images/image_1.png" 
-            alt="Hardware Design" 
-            className="w-full max-w-5xl object-contain opacity-90 drop-shadow-[0_0_50px_rgba(255,255,255,0.1)]"
-          />
-        </div>
-        {/* Adjusted the gradient to only darken the bottom area behind the text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent h-2/3 mt-auto"></div>
+        {/* Full width CAD image using object-cover per your request */}
+        <img src="/images/image_1.png" alt="Hardware Design" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">
-            Systems Architecture
-          </h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Systems Architecture</h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
             Developing modular computing platforms and custom routed circuit boards. Utilizing microcontrollers and low latency algorithms to build high fidelity systems and complex hardware integrations.
           </p>
-          <button 
-            onClick={() => setCurrentPage('projects')}
-            className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm"
-          >
-            View Engineering Projects
-          </button>
+          <button onClick={() => setCurrentPage('projects')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">View Engineering Projects</button>
         </div>
       </div>
 
-      {/* SECTION 4: PERFORMANCE (MTB DROP) */}
+      {/* SECTION 4: PERFORMANCE */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden border-t border-zinc-900">
-        <img 
-          src="/images/IMG_1716.jpeg" 
-          alt="Mountain Biking Drop" 
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
+        <img src="/images/IMG_1716.jpeg" alt="Mountain Biking" className="absolute inset-0 w-full h-full object-cover opacity-80" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">
-            Personal Pursuits
-          </h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Personal Pursuits</h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
             Passionate about mountain biking and automotive mechanics. Dedicated to community service and producing original music.
           </p>
-          <button 
-            onClick={() => setCurrentPage('about')}
-            className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm"
-          >
-            View Lifestyle
-          </button>
+          <button onClick={() => setCurrentPage('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">View Lifestyle</button>
         </div>
       </div>
-
     </div>
   );
 
@@ -186,14 +144,22 @@ export default function App() {
               <h2 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">{proj.subtitle}</h2>
               <h3 className="text-4xl font-bold mb-6 text-white uppercase">{proj.title}</h3>
               <p className="text-lg text-zinc-400 leading-relaxed mb-8">{proj.description}</p>
-              <button className="border-b border-white pb-1 text-sm text-white hover:text-zinc-400 hover:border-zinc-400 transition-colors uppercase tracking-widest">
-                View Repository
-              </button>
+              
+              {/* Conditionally render the button only if a link is provided */}
+              {proj.linkUrl && (
+                <a 
+                  href={proj.linkUrl} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="inline-block border-b border-white pb-1 text-sm text-white hover:text-zinc-400 hover:border-zinc-400 transition-colors uppercase tracking-widest"
+                >
+                  {proj.linkText}
+                </a>
+              )}
             </div>
             <div className={idx % 2 === 1 ? 'md:order-1' : ''}>
-              {/* Restored Structural Placeholder for future images */}
-              <div className="w-full aspect-[4/3] bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
-                Project Image Placeholder
+              <div className="w-full aspect-[4/3] bg-zinc-900 border border-zinc-800 overflow-hidden relative">
+                <img src={proj.img} alt={proj.title} className="w-full h-full object-cover object-center opacity-80 hover:opacity-100 transition-opacity duration-500" />
               </div>
             </div>
           </div>
@@ -210,7 +176,7 @@ export default function App() {
         <div>
           <div className="mb-24">
             <h1 className="text-5xl font-bold tracking-tighter mb-12 text-white uppercase">Professional Background</h1>
-            <div className="w-full aspect-[3/4] bg-zinc-900 mb-8 overflow-hidden border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
+            <div className="w-full aspect-[3/4] bg-zinc-900 mb-8 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
                Portrait Image Placeholder
             </div>
           </div>
@@ -237,7 +203,6 @@ export default function App() {
             <div className="space-y-24">
               {HOBBIES.map((hobby, i) => (
                 <div key={i}>
-                   {/* Restored Structural Placeholder for future images */}
                   <div className="w-full aspect-video bg-zinc-900 mb-6 border border-zinc-800 flex items-center justify-center text-zinc-700 text-xs tracking-widest uppercase">
                     Pursuit Image Placeholder
                   </div>
