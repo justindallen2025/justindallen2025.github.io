@@ -70,23 +70,29 @@ const HOBBIES = [
     title: "Community Impact",
     description: "Dedicated to outdoor exploration and community service. Active volunteer with Operation Christmas Child and various non profit organizations.",
     img: "/images/7E6B1CF2-3034-42E1-994C-AA2054D26435_1_105_c.jpeg",
-    imgClass: "object-cover object-top" // Anchors the crop to the top of the photo
+    imgClass: "object-cover object-top"
   }
 ];
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
+  // Helper function to scroll to top automatically when clicking a link
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const renderNav = () => (
     <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent px-8 py-10 flex justify-between items-center pointer-events-none">
       <div className="max-w-7xl mx-auto flex justify-between items-center w-full pointer-events-auto">
-        <button onClick={() => setCurrentPage('home')} className="text-xl font-bold tracking-tighter uppercase text-white hover:opacity-70 transition-opacity">
+        <button onClick={() => handleNavigate('home')} className="text-xl font-bold tracking-tighter uppercase text-white hover:opacity-70 transition-opacity">
           Justin Allen
         </button>
         <div className="flex gap-8 text-xs uppercase tracking-widest text-zinc-400">
-          <button onClick={() => setCurrentPage('home')} className={`hover:text-white transition-colors ${currentPage === 'home' ? 'text-white' : ''}`}>Home</button>
-          <button onClick={() => setCurrentPage('projects')} className={`hover:text-white transition-colors ${currentPage === 'projects' ? 'text-white' : ''}`}>Projects</button>
-          <button onClick={() => setCurrentPage('about')} className={`hover:text-white transition-colors ${currentPage === 'about' ? 'text-white' : ''}`}>About</button>
+          <button onClick={() => handleNavigate('home')} className={`hover:text-white transition-colors ${currentPage === 'home' ? 'text-white' : ''}`}>Home</button>
+          <button onClick={() => handleNavigate('projects')} className={`hover:text-white transition-colors ${currentPage === 'projects' ? 'text-white' : ''}`}>Projects</button>
+          <button onClick={() => handleNavigate('about')} className={`hover:text-white transition-colors ${currentPage === 'about' ? 'text-white' : ''}`}>About</button>
         </div>
       </div>
     </nav>
@@ -99,7 +105,7 @@ export default function App() {
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
         <img src="/images/IMG_0851.jpeg" alt="Embedded Hardware" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        <div className="relative z-10 max-w-4xl pb-12">
+        <div className="relative z-10 max-w-4xl pb-12 w-full">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Justin Allen</h1>
           <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">
             Computer Science Georgia Tech and Software Engineer Intern at GTRI. Bridging high level software with bare metal performance.
@@ -116,7 +122,7 @@ export default function App() {
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
             Currently a Software Engineering Intern in ANGPD for the GTTAK project. Architecting deployable server environments and routing live video feeds for cross agency situational awareness platforms.
           </p>
-          <button onClick={() => setCurrentPage('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">Read Background</button>
+          <button onClick={() => handleNavigate('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">Read Background</button>
         </div>
       </div>
 
@@ -129,7 +135,7 @@ export default function App() {
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
             Developing modular computing platforms and custom routed circuit boards. Utilizing microcontrollers and low latency algorithms to build high fidelity systems and complex hardware integrations.
           </p>
-          <button onClick={() => setCurrentPage('projects')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">View Engineering Projects</button>
+          <button onClick={() => handleNavigate('projects')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">View Engineering Projects</button>
         </div>
       </div>
 
@@ -142,7 +148,7 @@ export default function App() {
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
             Passionate about mountain biking and automotive mechanics. Dedicated to community service and producing original music.
           </p>
-          <button onClick={() => setCurrentPage('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">View Lifestyle</button>
+          <button onClick={() => handleNavigate('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">View Lifestyle</button>
         </div>
       </div>
     </div>
@@ -151,13 +157,13 @@ export default function App() {
   const renderProjects = () => (
     <div className="animate-in fade-in duration-1000">
       
-      {/* PROJECTS BANNER - Now full h-screen */}
+      {/* PROJECTS BANNER - Unified Title Styling and Brightened Background */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pb-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-white uppercase">Engineering</h1>
-          <p className="text-xl text-zinc-400 max-w-2xl">Hardware architecture and full stack systems designed for zero latency and high availability.</p>
+        <img src="/images/option2.png" alt="Data Spectrogram" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div className="relative z-10 max-w-4xl pb-12 w-full">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Engineering</h1>
+          <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">Hardware architecture and full stack systems designed for zero latency and high availability.</p>
         </div>
       </div>
 
@@ -195,14 +201,13 @@ export default function App() {
   const renderAbout = () => (
     <div className="animate-in fade-in duration-1000">
 
-      {/* ABOUT BANNER */}
+      {/* ABOUT BANNER - Unified Title Styling, Klaus Building, Brightened Background */}
       <div className="w-full h-screen bg-black flex flex-col justify-end p-12 relative overflow-hidden">
-        {/* Placeholder background - can swap with a real image later */}
-        <img src="/images/IMG_1349.jpeg" alt="Background Placeholder" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pb-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-white uppercase">Experience & About</h1>
-          <p className="text-xl text-zinc-400 max-w-2xl">Professional background, technical capabilities, and personal pursuits.</p>
+        <img src="/images/EFFD921D-DEE4-4A6A-9D22-AEE17F6375D5_1_105_c.jpeg" alt="Georgia Tech Klaus Building" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div className="relative z-10 max-w-4xl pb-12 w-full">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Experience & About</h1>
+          <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">Professional background, technical capabilities, and personal pursuits.</p>
         </div>
       </div>
 
@@ -211,12 +216,14 @@ export default function App() {
         
         {/* BIO SECTION */}
         <div className="grid md:grid-cols-3 gap-12 items-center">
-          <div className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden border border-zinc-800">
-            {/* Object-top and object-cover ensure full bleed and face focus without grayscale */}
-            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-full h-full object-cover object-top drop-shadow-2xl" />
+          
+          {/* PROFILE IMAGE - Centered, zoomed in, removed grayscale */}
+          <div className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden border border-zinc-800 flex items-end justify-center relative">
+            <img src="/images/NEW_Profile_Pic.png" alt="Justin Allen" className="w-[115%] max-w-none h-auto object-contain object-bottom drop-shadow-2xl translate-y-4" />
           </div>
+          
           <div className="md:col-span-2">
-            <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Justin Allen</h2>
+            <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Professional Background</h2>
             <p className="text-zinc-400 leading-relaxed mb-6 text-lg">
               I am a Computer Science student at the Georgia Institute of Technology specializing in Information Internetworks and Cybersecurity. My engineering focus lies at the intersection of high level software architecture and bare metal embedded systems.
             </p>
