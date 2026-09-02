@@ -241,7 +241,7 @@ export default function App() {
             <div className="text-zinc-400 text-sm mb-4">Bachelor of Science in Computer Science</div>
             <ul className="text-zinc-400 text-base space-y-2 leading-relaxed">
               <li>Expected Graduation December 2028</li>
-              <li>Threads Information Internetworks and Cybersecurity and Privacy</li>
+              <li>Threads: Information Internetworks and Cybersecurity and Privacy</li>
               <li>Zell Miller Scholarship and Deans List</li>
               <li>CompTIA Security+ Certified</li>
             </ul>
