@@ -9,33 +9,33 @@ const SKILLS = [
 
 const EXPERIENCE = [
   {
+    role: "Student Assistant / Embedded Security Researcher",
+    company: "GTRI (CIPHER)",
+    period: "August 2026 to Present",
+    desc: "Building physics-based UAV digital twins and reversing frequency-hopping wireless links using Software-Defined Radios to extract raw packet headers and secure tactical infrastructures."
+  },
+  {
+    role: "Founder & CEO",
+    company: "Signl Systems",
+    period: "January 2026 to Present",
+    desc: "Engineering embedded DSP prototypes on custom hardware, utilizing ARM Cortex-M7 microcontrollers for low-latency audio processing and custom hardware pipelines."
+  },
+  {
     role: "Software Engineer Intern",
     company: "Georgia Tech Research Institute",
-    period: "May 2026 to Present",
-    desc: "Architecting tactical network environments. Engineering Python and Node RED middleware for real time sensor ingestion across federal and state networks. Modeling secure sensor broadcasting and cross agency situational awareness protocols."
-  },
-  {
-    role: "IT Intern",
-    company: "Fellowship Christian School",
-    period: "Jan 2024",
-    desc: "Mapped wireless access points for emergency services 911 dispatch to improve response time and safety infrastructure."
-  },
-  {
-    role: "Operations Intern",
-    company: "Roswell Police Department",
-    period: "Jan 2024",
-    desc: "Shadowed dispatch and records divisions observing protocols for handling sensitive data and rapid information relay during critical incidents. Analyzed technical infrastructure used to coordinate first responder location tracking."
+    period: "May 2026 to August 2026",
+    desc: "Architected tactical network environments, engineering Python and Node-RED middleware for real-time sensor ingestion and live camera feed routing for the National Guard."
   }
 ];
 
 const PROJECTS = [
   {
-    title: "Project CORE",
+    title: "Signl Systems (Formerly CORE Music Tech)",
     subtitle: "Digital Signal Processing Architecture",
     description: "Modular embedded audio digital signal processing system. Authored low latency C++ callbacks for high fidelity 24 bit 96kHz audio processing utilizing a 480 MHz ARM Cortex M7 microcontroller.",
     img: "/images/FullSizeRender.jpeg",
     linkText: "View Website",
-    linkUrl: "https://coremusictech.com"
+    linkUrl: "https://signltech.com"
   },
   {
     title: "Catalyst Cloud Burn Tracker",
@@ -107,7 +107,7 @@ export default function App() {
         <div className="relative z-10 max-w-4xl pb-12 w-full">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-6 uppercase">Justin Allen</h1>
           <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-snug">
-            Computer Science Georgia Tech and Software Engineer Intern at GTRI. Bridging high level software with bare metal performance.
+            Computer Science student at Georgia Tech and security researcher at GTRI CIPHER. Bridging high-level software with bare-metal performance.
           </p>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function App() {
         <div className="relative z-10 max-w-4xl pb-12 mx-auto w-full px-8">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 uppercase">Tactical Operations</h2>
           <p className="text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-8">
-            Currently a Software Engineering Intern in ANGPD for the GTTAK project. Architecting deployable server environments and routing live video feeds for cross agency situational awareness platforms.
+            Currently researching embedded security at GTRI CIPHER, building UAV digital twins, and analyzing frequency-hopping wireless links with Software-Defined Radios.
           </p>
           <button onClick={() => handleNavigate('about')} className="border border-white text-white px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors uppercase tracking-widest backdrop-blur-sm">Read Background</button>
         </div>
