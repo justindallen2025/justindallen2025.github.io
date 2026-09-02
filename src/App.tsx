@@ -243,6 +243,7 @@ export default function App() {
               <li>Expected Graduation December 2028</li>
               <li>Threads Information Internetworks and Cybersecurity and Privacy</li>
               <li>Zell Miller Scholarship and Deans List</li>
+              <li>CompTIA Security+ Certified</li>
             </ul>
           </div>
         </section>
